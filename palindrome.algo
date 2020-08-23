@@ -1,0 +1,18 @@
+FUNCTION is_palindrome(str:STRING, n: INTEGER) : BOOLEAN // n is the length of str
+VAR
+    i: INTEGER;
+    str1: STRING;
+BEGIN
+    IF (n=0 ou n=1) THEN
+        RETURN TRUE;
+    ELSE
+        IF (str[0]=str[n-1]) THEN
+            FOR i FROM 0 TO n-3 STEP 1  DO
+                str1[i]:=str[i+1];
+            END_FOR
+            is_palindrome(str1, n-2);
+        ELSE
+            RETURN FALSE;
+        END_IF
+    END_IF
+END
